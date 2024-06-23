@@ -41,7 +41,7 @@ class CotacaoService {
 
       return newCotacao;
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }
@@ -135,7 +135,7 @@ class CotacaoService {
 
       return await cotacao.reload();
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }
@@ -158,7 +158,7 @@ class CotacaoService {
         },
       });
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }

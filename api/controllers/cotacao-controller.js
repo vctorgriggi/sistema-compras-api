@@ -16,7 +16,7 @@ class CotacaoController {
 
       res.status(201).send();
     } catch (error) {
-      console.log("controller error:", error.message);
+      console.log("Controller error:", error.message);
       res.status(400).send(error.message);
     }
   }
@@ -34,7 +34,7 @@ class CotacaoController {
 
       res.status(200).json(cotacao);
     } catch (error) {
-      console.log("controller error:", error.message);
+      console.log("Controller error:", error.message);
       res.status(400).send(error.message);
     }
   }
@@ -55,7 +55,7 @@ class CotacaoController {
 
       res.status(200).json(cotacao);
     } catch (error) {
-      console.log("controller error:", error.message);
+      console.log("Controller error:", error.message);
       res.status(400).send(error.message);
     }
   }
@@ -68,7 +68,7 @@ class CotacaoController {
 
       res.status(204).send();
     } catch (error) {
-      console.log("controller error:", error.message);
+      console.log("Controller error:", error.message);
       res.status(400).send(error.message);
     }
   }

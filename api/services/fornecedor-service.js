@@ -25,7 +25,7 @@ class FornecedorService {
 
       return newFornecedor;
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }
@@ -89,7 +89,7 @@ class FornecedorService {
 
       return await fornecedor.reload();
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }
@@ -112,7 +112,7 @@ class FornecedorService {
         },
       });
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }

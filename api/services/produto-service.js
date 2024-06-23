@@ -34,7 +34,7 @@ class ProdutoService {
 
       return newProduto;
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }
@@ -114,7 +114,7 @@ class ProdutoService {
 
       return await produto.reload();
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }
@@ -137,7 +137,7 @@ class ProdutoService {
         },
       });
     } catch (error) {
-      console.error("service error:", error.message);
+      console.error("Service error:", error.message);
       throw error;
     }
   }
