@@ -14,7 +14,7 @@ class FornecedorProdutoController {
 
       res.status(200).send();
     } catch (error) {
-      console.log("Controller error:", error.message);
+      console.log("controller error:", error.message);
       res.status(400).send(error.message);
     }
   }
@@ -31,7 +31,7 @@ class FornecedorProdutoController {
 
       res.status(204).send();
     } catch (error) {
-      console.log("Controller error:", error.message);
+      console.log("controller error:", error.message);
       res.status(400).send(error.message);
     }
   }

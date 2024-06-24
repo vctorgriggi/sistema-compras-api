@@ -34,7 +34,7 @@ class ContatoService {
 
       return newContato;
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }
@@ -102,7 +102,7 @@ class ContatoService {
 
       return await contato.reload();
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }
@@ -125,7 +125,7 @@ class ContatoService {
         },
       });
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }

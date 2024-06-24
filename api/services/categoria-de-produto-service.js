@@ -22,7 +22,7 @@ class CategoriaDeProdutoService {
 
       return newCategoriaDeProduto;
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }
@@ -72,7 +72,7 @@ class CategoriaDeProdutoService {
 
       return await categoriaDeProduto.reload();
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }
@@ -95,7 +95,7 @@ class CategoriaDeProdutoService {
         },
       });
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }

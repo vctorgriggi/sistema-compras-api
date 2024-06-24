@@ -25,7 +25,9 @@ class CotacaoService {
       const isAssociated = await fornecedor.hasProduto(produto);
 
       if (!isAssociated) {
-        throw new Error("Association not found.");
+        throw new Error(
+          "The association between supplier and product was not found."
+        );
       }
     }
 
@@ -41,7 +43,7 @@ class CotacaoService {
 
       return newCotacao;
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }
@@ -135,7 +137,7 @@ class CotacaoService {
 
       return await cotacao.reload();
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }
@@ -158,7 +160,7 @@ class CotacaoService {
         },
       });
     } catch (error) {
-      console.error("Service error:", error.message);
+      console.error("service error:", error.message);
       throw error;
     }
   }
