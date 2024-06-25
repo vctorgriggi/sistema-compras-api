@@ -14,7 +14,7 @@ class CategoriaDeProdutoController {
       res.status(201).send();
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -32,7 +32,7 @@ class CategoriaDeProdutoController {
       res.status(200).json(categoriaDeProduto);
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -50,7 +50,7 @@ class CategoriaDeProdutoController {
       res.status(200).json(categoriaDeProduto);
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -63,7 +63,7 @@ class CategoriaDeProdutoController {
       res.status(204).send();
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 }

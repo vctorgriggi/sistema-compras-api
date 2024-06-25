@@ -16,7 +16,7 @@ class ProdutoController {
       res.status(201).send();
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -34,7 +34,7 @@ class ProdutoController {
       res.status(200).json(produto);
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -54,7 +54,7 @@ class ProdutoController {
       res.status(200).json(produto);
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -67,7 +67,7 @@ class ProdutoController {
       res.status(204).send();
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 }

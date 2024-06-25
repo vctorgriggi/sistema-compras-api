@@ -17,7 +17,7 @@ class ContatoController {
       res.status(201).send();
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -35,7 +35,7 @@ class ContatoController {
       res.status(200).json(contato);
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -56,7 +56,7 @@ class ContatoController {
       res.status(200).json(contato);
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 
@@ -69,7 +69,7 @@ class ContatoController {
       res.status(204).send();
     } catch (error) {
       console.log("controller error:", error.message);
-      res.status(400).send(error.message);
+      res.status(400).send({ message: error.message });
     }
   }
 }
