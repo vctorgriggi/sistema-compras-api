@@ -6,6 +6,7 @@ var config = {
   development: {
     dialect: "sqlite",
     storage: "./db/development.sqlite",
+    timezone: "-03:00",
   },
   // test: {
   // username: "root",
@@ -29,6 +30,7 @@ var config = {
     connection: {
       options: `project=${ENDPOINT_ID}`,
     },
+    timezone: "-03:00",
   },
 };
 
