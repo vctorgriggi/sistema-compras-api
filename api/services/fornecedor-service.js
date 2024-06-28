@@ -3,14 +3,14 @@ const database = require("../models");
 
 class FornecedorService {
   async create(dto) {
-    const fornecedor = await database.Fornecedores.findOne({
+    const fornecedorByNome = await database.Fornecedores.findOne({
       where: {
         nome: dto.nome,
       },
     });
 
-    if (fornecedor) {
-      throw new Error("Data already exists.");
+    if (fornecedorByNome) {
+      throw new Error("There is already a supplier with this name.");
     }
 
     try {
@@ -76,6 +76,17 @@ class FornecedorService {
 
     if (!fornecedor) {
       throw new Error("Data not found.");
+    }
+
+    const fornecedorByNome = await database.Fornecedores.findOne({
+      where: {
+        nome: dto.nome,
+        id: { [database.Sequelize.Op.ne]: dto.id },
+      },
+    });
+
+    if (fornecedorByNome) {
+      throw new Error("There is already a supplier with this name.");
     }
 
     try {

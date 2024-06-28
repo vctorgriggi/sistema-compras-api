@@ -12,14 +12,14 @@ class ContatoService {
       }
     }
 
-    const contato = await database.Contatos.findOne({
+    const contatoByEmail = await database.Contatos.findOne({
       where: {
-        [Op.or]: [{ telefone: dto.telefone }, { email: dto.email }],
+        email: dto.email,
       },
     });
 
-    if (contato) {
-      throw new Error("Data already exists.");
+    if (contatoByEmail) {
+      throw new Error("There is already a contact with this email address.");
     }
 
     try {
@@ -89,6 +89,17 @@ class ContatoService {
       if (!fornecedor) {
         throw new Error("Data not found.");
       }
+    }
+
+    const contatoByEmail = await database.Contatos.findOne({
+      where: {
+        email: dto.email,
+        id: { [Op.ne]: dto.id },
+      },
+    });
+
+    if (contatoByEmail) {
+      throw new Error("There is already a contact with this email address.");
     }
 
     try {

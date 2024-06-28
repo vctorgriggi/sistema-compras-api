@@ -3,14 +3,15 @@ const database = require("../models");
 
 class CategoriaDeProdutoService {
   async create(dto) {
-    const categoriaDeProduto = await database.CategoriasDeProdutos.findOne({
-      where: {
-        nome: dto.nome,
-      },
-    });
+    const categoriaDeProdutoByNome =
+      await database.CategoriasDeProdutos.findOne({
+        where: {
+          nome: dto.nome,
+        },
+      });
 
-    if (categoriaDeProduto) {
-      throw new Error("Data already exists.");
+    if (categoriaDeProdutoByNome) {
+      throw new Error("There is already a product category with this name.");
     }
 
     try {
@@ -62,6 +63,18 @@ class CategoriaDeProdutoService {
 
     if (!categoriaDeProduto) {
       throw new Error("Data not found.");
+    }
+
+    const existingCategoriaDeProdutoByNome =
+      await database.CategoriasDeProdutos.findOne({
+        where: {
+          nome: dto.nome,
+          id: { [database.Sequelize.Op.ne]: dto.id },
+        },
+      });
+
+    if (existingCategoriaDeProdutoByNome) {
+      throw new Error("There is already a product category with this name.");
     }
 
     try {

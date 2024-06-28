@@ -13,14 +13,14 @@ class ProdutoService {
       }
     }
 
-    const produto = await database.Produtos.findOne({
+    const produtoByNome = await database.Produtos.findOne({
       where: {
         nome: dto.nome,
       },
     });
 
-    if (produto) {
-      throw new Error("Data already exists.");
+    if (produtoByNome) {
+      throw new Error("There is already a product with this name.");
     }
 
     try {
@@ -102,6 +102,17 @@ class ProdutoService {
       if (!categoriaDeProduto) {
         throw new Error("Data not found.");
       }
+    }
+
+    const produtoByNome = await database.Produtos.findOne({
+      where: {
+        nome: dto.nome,
+        id: { [Op.ne]: dto.id },
+      },
+    });
+
+    if (produtoByNome) {
+      throw new Error("There is already a product with this name.");
     }
 
     try {
